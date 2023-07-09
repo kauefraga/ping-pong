@@ -1,0 +1,8 @@
+# Binaries
+bin
+
+# User Visual Studio configuration
+*.vcxproj.user
+
+# Visual Studio cache/options 
+.vs
