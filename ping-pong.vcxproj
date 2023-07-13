@@ -166,6 +166,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="resources\background-pixel.png" />
     <Image Include="resources\background.png" />
     <Image Include="resources\icon.png" />
   </ItemGroup>

@@ -37,5 +37,8 @@
     <Image Include="resources\icon.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="resources\background-pixel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
