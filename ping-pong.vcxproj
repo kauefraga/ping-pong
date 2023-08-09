@@ -112,12 +112,11 @@
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <EntryPointSymbol>
-      </EntryPointSymbol>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -157,6 +156,7 @@
     <None Include=".editorconfig" />
     <None Include=".gitignore" />
     <None Include="LICENSE" />
+    <None Include="ONBOARDING.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +166,9 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bin\x64\Release\ping-pong\resources\background-pixel.png" />
+    <Image Include="bin\x64\Release\ping-pong\resources\background.png" />
+    <Image Include="bin\x64\Release\ping-pong\resources\icon.png" />
     <Image Include="resources\background-pixel.png" />
     <Image Include="resources\background.png" />
     <Image Include="resources\icon.png" />

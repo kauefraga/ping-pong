@@ -19,6 +19,7 @@
     <None Include="LICENSE" />
     <None Include="README.md" />
     <None Include=".gitignore" />
+    <None Include="ONBOARDING.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game.h">
@@ -38,6 +39,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="resources\background-pixel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bin\x64\Release\ping-pong\resources\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bin\x64\Release\ping-pong\resources\background-pixel.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="bin\x64\Release\ping-pong\resources\icon.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
