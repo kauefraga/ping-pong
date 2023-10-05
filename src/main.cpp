@@ -1,171 +1,79 @@
 #include "game.h"
 
-using namespace palette;
-
 int main() {
-  InitWindow(screen::WIDTH, screen::HEIGHT, "Ping Pong"); // Initialize the window and opengl context
-
-  SetExitKey(KEY_NULL);
-
+  InitWindow(screen::WIDTH, screen::HEIGHT, "Ping Pong");
+  SetExitKey(KEY_NULL); // Disable ESC exiting
   SetTargetFPS(60);
 
   Image icon = LoadImage("resources/icon.png");
-
   SetWindowIcon(icon);
-
   UnloadImage(icon);
 
-  Texture layout = LoadTexture("resources/layout.png");
+  Paddle player{};
+  player.x = 10;
+  player.y = (GetScreenHeight() / 2.0f) - (player.height / 2.0f);
 
-  int left_score = 0;
-  int right_score = 0;
-
-  Paddle left{
-    (GetScreenWidth() / 2.0f) - (table::WIDTH / 2) + PADDLE_PADDING
-  };
-
-  Paddle right{
-    (GetScreenWidth() / 2.0f) + (table::WIDTH / 2) - PADDLE_PADDING - 5 // 5 is border correction
-  };
+  CpuPaddle computer{};
+  computer.x = GetScreenWidth() - (computer.width + 10.0f);
+  computer.y = (GetScreenHeight() / 2.0f) - (computer.height / 2.0f);
 
   Ball ball{};
 
-  // If ESC is pressed the game closes
-  while (!WindowShouldClose()) {
-    /* --- UPDATE --- */
+  int player_score = 0;
+  int computer_score = 0;
 
-    // left paddle (wasd)
+  while (!WindowShouldClose()) {
+
     if (IsKeyDown(KEY_S)) {
-      left.y += PADDLE_SPEED * GetFrameTime();
+      player.y += player.speed;
     }
 
     if (IsKeyDown(KEY_W)) {
-      left.y -= PADDLE_SPEED * GetFrameTime();
+      player.y -= player.speed;
     }
 
-    // right paddle (arrows)
-    if (IsKeyDown(KEY_DOWN)) {
-      right.y += PADDLE_SPEED * GetFrameTime();
-    }
+    player.update();
+    computer.update(ball.y);
+    ball.update();
+    ball.checkWinner(player_score, computer_score);
 
-    if (IsKeyDown(KEY_UP)) {
-      right.y -= PADDLE_SPEED * GetFrameTime();
-    }
-
-    ball.x += ball.speed_x * GetFrameTime();
-    ball.y += ball.speed_y * GetFrameTime();
-
-    if (ball.speed_x > 2500) {
-      ball.speed_x = 300;
-    }
-
-    /* --- COLLISIONS paddle-ball --- */
-    // left paddle-ball collision
     if (CheckCollisionCircleRec(
-      { ball.x, ball.y },
+      Vector2{ ball.x, ball.y },
       ball.radius,
-      { left.x, left.y, left.width, left.height }
+      Rectangle{ player.x, player.y, (float) player.width, (float) player.height }
     )) {
-      if (ball.speed_x < 0) {
-        ball.speed_x *= -1.05f;
-        ball.speed_y = (ball.y - left.y);
-        // SEE: https://gamedev.stackexchange.com/questions/4253/in-pong-how-do-you-calculate-the-balls-direction-when-it-bounces-off-the-paddl
-      }
+      ball.speed_x *= -1;
     }
 
-    // right paddle-ball collision
     if (CheckCollisionCircleRec(
-      { ball.x, ball.y },
+      Vector2{ ball.x, ball.y },
       ball.radius,
-      { right.x, right.y, right.width, right.height }
+      Rectangle{ computer.x, computer.y, (float) computer.width, (float) computer.height }
     )) {
-      if (ball.speed_x > 0) {
-        ball.speed_x *= -1.05f;
-        ball.speed_y = (ball.y - right.y);
-      }
+      ball.speed_x *= -1;
     }
 
-    // ball limits
-    bool ball_ceil_limit = CheckCollisionCircleRec(
-      { ball.x, ball.y },
-      ball.radius,
-      { table::OFFSET_X, table::OFFSET_Y, table::WIDTH, 1 }
-    );
-
-    bool ball_floor_limit = CheckCollisionCircleRec(
-      { ball.x, ball.y },
-      ball.radius,
-      { table::OFFSET_X, table::HEIGHT + table::OFFSET_Y - 20, table::WIDTH, 1 } // -20 is border correction
-    );
-
-    bool ball_left_limit = CheckCollisionCircleRec(
-      { ball.x, ball.y },
-      ball.radius,
-      { table::OFFSET_X, table::OFFSET_Y, 1, table::HEIGHT }
-    );
-
-    bool ball_right_limit = CheckCollisionCircleRec(
-      { ball.x, ball.y },
-      ball.radius,
-      { table::WIDTH + table::OFFSET_X - 15, table::OFFSET_Y, 1, table::HEIGHT } // -15 is border correction
-    );
-
-    if (ball_ceil_limit) {
-      ball.speed_y *= -1;
-    }
-
-    if (ball_floor_limit) {
-      ball.speed_y *= -1;
-    }
-
-    if (ball_left_limit) {
-      ball.reset();
-      ball.speed_x += ball.speed_x * GetFrameTime();
-      ball.speed_y += ball.speed_y * GetFrameTime();
-      right_score += 1 ; // if the ball touches the left wall, right paddle points
-    }
-
-    if (ball_right_limit) {
-      ball.reset();
-      ball.speed_x += ball.speed_x * GetFrameTime();
-      ball.speed_y += ball.speed_y * GetFrameTime();
-      left_score += 1; // if the ball toucher the right wall, left paddle points
-    }
-
-    if (IsKeyReleased(KEY_R)) {
-      ball.reset();
-    }
-
-    /* --- DRAW --- */
     BeginDrawing();
 
-    // Clear the screen before start drawing
-    ClearBackground(RAYWHITE);
+    ClearBackground(Color{ 42, 42, 42, 255 });
 
-    // Table, players icon and scoreboard
-    DrawTexture(layout, 0, 0, WHITE);
-
-    // Score board
-    DrawText(TextFormat("%ix%i", left_score, right_score),
-      (screen::WIDTH - MeasureText("XxX", 50)) / 2,
-      screen::SCORE_OFFSET_Y,
-      50,
-      ODD_PURPLE
+    DrawLine(
+      GetScreenWidth() / 2,
+      0,
+      GetScreenWidth() / 2,
+      GetScreenHeight(),
+      RAYWHITE
     );
 
-    // left paddle
-    left.draw();
-
-    // right paddle
-    right.draw();
-
-    // Ball
+    player.draw();
+    computer.draw();
     ball.draw();
+
+    DrawText(TextFormat("%i", player_score), GetScreenWidth() / 4 - 20, 20, 80, RAYWHITE);
+    DrawText(TextFormat("%i", computer_score), 3 * GetScreenWidth() / 4 - 20, 20, 80, RAYWHITE);
 
     EndDrawing();
   }
-
-  UnloadTexture(layout);
 
   CloseWindow();
 

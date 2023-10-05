@@ -1,65 +1,95 @@
 #pragma once
 
 #include <raylib.h>
+#include "constants.h"
 
-/* ----- SCREEN ----- */
-namespace screen {
-  const int WIDTH = 1000;
-  const int HEIGHT = 700;
-
-  // The distance between the top to score origin.
-  const int SCORE_OFFSET_Y = 80;
-}
-
-/* ----- TABLE ----- */
-namespace table {
-  const int WIDTH = 920;
-  const int HEIGHT = 440;
-
-  // The distance between the top to table-top and left to table-left.
-  const int OFFSET_X = 50;
-  const int OFFSET_Y = 230;
-}
-
-/* ----- PADDLE ----- */
-const int PADDLE_SPEED = 500;
-const int PADDLE_PADDING = 30;
-
-struct Paddle {
-  float x;
-  float y = (GetScreenHeight() / 2.0f) + (table::HEIGHT / 2.0f - table::OFFSET_Y / 2.0f) - 50; // 50 is the paddle height
-  float width = 5;
-  float height = 50;
-
-  void draw() {
-    DrawRectangle((int) x, (int) y, (int) width, (int) height, BLACK);
-  }
-};
-
-/* ----- BALL ----- */
-struct Ball {
+class Ball {
+public:
   float x = GetScreenWidth() / 2.0f;
-  float y = (GetScreenHeight() / 2.0f) + (table::HEIGHT / 2.0f - table::OFFSET_Y / 2.0f) - 30; // 30 is the diameter of the ball
-  float speed_x = 300.0f;
-  float speed_y = 150.0f;
-  float radius = 15;
+  float y = GetScreenHeight() / 2.0f;
+  int speed_x = 5;
+  int speed_y = 5;
+  float radius = 20;
 
   void draw() {
-    DrawCircle((int) x, (int) y, radius, WHITE);
+    DrawCircle((int)x, (int)y, radius, RAYWHITE);
+  }
+
+  void update() {
+    x += speed_x;
+    y += speed_y;
+
+    if (x + radius >= GetScreenWidth() || x - radius <= 0) {
+      speed_x *= -1;
+    }
+
+    if (y + radius >= GetScreenHeight() || y - radius <= 0) {
+      speed_y *= -1;
+    }
+  }
+
+  void checkWinner(int& score1, int& score2) {
+    if (x + radius >= GetScreenWidth()) {
+      score1++;
+      reset();
+    }
+
+    if (x - radius <= 0) {
+      score2++;
+      reset();
+    }
   }
 
   void reset() {
     x = GetScreenWidth() / 2.0f;
-    y = (GetScreenHeight() / 2.0f) + (table::HEIGHT / 2.0f - table::OFFSET_Y / 2.0f);
-    speed_x = 300.0f;
-    speed_y = 150.0f;
+    y = GetScreenHeight() / 2.0f;
+
+    int speed_choices[2] = { -1, 1 };
+    speed_x *= speed_choices[GetRandomValue(0, 1)];
+    speed_y *= speed_choices[GetRandomValue(0, 1)];
   }
 };
 
-/* ----- OOD FEELING PALETTE -----
- * Creator: XENO
- * See: https://lospec.com/palette-list/odd-feeling
-*/
-namespace palette {
-  const Color ODD_PURPLE{ 144, 12, 63, 255 };
-}
+class Paddle {
+protected:
+  void LimitMovement() {
+    if (y + height >= GetScreenHeight()) {
+      y = (float)GetScreenHeight() - height;
+    }
+
+    if (y <= 0) {
+      y = 0;
+    }
+  }
+
+public:
+  float x;
+  float y;
+  int speed = 10;
+  int width = 20;
+  int height = 100;
+
+  void draw() {
+    DrawRectangle((int)x, (int)y, width, height, RAYWHITE);
+  }
+
+  void update() {
+
+    LimitMovement();
+  }
+};
+
+class CpuPaddle : public Paddle {
+public:
+  void update(float ball_y) {
+    if (y + height / 2.0f > ball_y) {
+      y -= speed;
+    }
+
+    if (y + height / 2.0f <= ball_y) {
+      y += speed;
+    }
+
+    LimitMovement();
+  }
+};
