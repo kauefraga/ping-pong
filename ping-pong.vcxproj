@@ -169,9 +169,6 @@
     <Image Include="bin\x64\Release\ping-pong\resources\background-pixel.png" />
     <Image Include="bin\x64\Release\ping-pong\resources\background.png" />
     <Image Include="bin\x64\Release\ping-pong\resources\icon.png" />
-    <Image Include="resources\background-pixel.png" />
-    <Image Include="resources\background.png" />
-    <Image Include="resources\icon.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

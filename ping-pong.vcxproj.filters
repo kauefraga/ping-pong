@@ -34,15 +34,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\background.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\icon.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="resources\background-pixel.png">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="bin\x64\Release\ping-pong\resources\background.png">
       <Filter>Resource Files</Filter>
     </Image>
