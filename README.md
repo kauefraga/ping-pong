@@ -8,40 +8,52 @@
   <p>
     <img
       alt="GitHub top language"
-      src="https://img.shields.io/github/languages/top/kauefraga/ping-pong.svg"
+      src="https://img.shields.io/github/languages/top/kauefraga/ping-pong"
     />
     <img
-      alt="Repository size"
-      src="https://img.shields.io/github/repo-size/kauefraga/ping-pong.svg"
+      alt="GitHub all releases"
+      src="https://img.shields.io/github/downloads/kauefraga/ping-pong/total"
     />
     <a href="https://github.com/kauefraga/ping-pong/commits/main">
       <img
         alt="GitHub last commit"
-        src="https://img.shields.io/github/last-commit/kauefraga/ping-pong.svg"
+        src="https://img.shields.io/github/last-commit/kauefraga/ping-pong"
       />
     </a>
     <img
       alt="GitHub LICENSE"
-      src="https://img.shields.io/github/license/kauefraga/ping-pong.svg"
+      src="https://img.shields.io/github/license/kauefraga/ping-pong"
     />
   </p>
 </div>
 
-### Features (v1.1.0)
+### Features (v2)
 
-- Two paddles that move vertically with W/S and Arrow Up/Arrow Down.
-- A white ball that moves faster than your reflex.
-- A score board and a fps board.
-- A background pixer art-based made by [Aron](https://www.deviantart.com/arorok/gallery).
+- A classic game with all the implementations you would expect.
+- Player versus Computer (simple AI algorithm).
+- A ball that moves faster than your reflex.
+- A dead-simple score implementation.
+- It's written in C++, so it's blazingly fast!
+- Memory RAM? It is consuming around 25MB!!
 
 ## ⬇️ Getting Started
 
-1. Create a folder wherever you want;
-2. Install the game executable in the [releases section](https://github.com/kauefraga/ping-pong/releases);
-3. Unzip it inside the folder and keep the files as they are;
-4. Double click the `ping-pong.exe` and enjoy the gameplay!
+### How to install and run it
+
+1. Install the game executable in the [releases section](https://github.com/kauefraga/ping-pong/releases);
+2. Unzip it inside the folder and keep the files as they are;
+3. Double click the `ping-pong.exe` and enjoy the gameplay!
 
 Feel free to open an [issue](https://github.com/kauefraga/ping-pong/issues). We'd like to read and fix the bugs you spotted!
+
+### How to play
+
+Currently it's pretty straightforward:
+
+- press <kbd>w</kbd> to go up
+- press <kbd>s</kbd> to go down
+
+You learned how to play Ping Pong! Hope you like it 💙
 
 ## 🧻 Resources
 
@@ -52,9 +64,9 @@ Feel free to open an [issue](https://github.com/kauefraga/ping-pong/issues). We'
 
 ## 💖 Collaborators
 
-- [Kauê Fraga Rodrigues](https://github.com/kauefraga) - Game developer.......
+- [Kauê](https://github.com/kauefraga) - Game developer.......
 - [Aron <3](https://www.deviantart.com/arorok/gallery) - Pixel artist........
 
 ## 📝 License
 
-This project is licensed under the MIT License - See the [LICENSE](https://github.com/kauefraga/ping-pong/blob/main/LICENSE) for more information.
+This project is licensed under the GPL-3.0 License - See the [LICENSE](https://github.com/kauefraga/ping-pong/blob/main/LICENSE) for more information.
