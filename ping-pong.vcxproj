@@ -156,7 +156,6 @@
     <None Include=".editorconfig" />
     <None Include=".gitignore" />
     <None Include="LICENSE" />
-    <None Include="ONBOARDING.md" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>

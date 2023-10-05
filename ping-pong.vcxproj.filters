@@ -19,7 +19,6 @@
     <None Include="LICENSE" />
     <None Include="README.md" />
     <None Include=".gitignore" />
-    <None Include="ONBOARDING.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game.h">
