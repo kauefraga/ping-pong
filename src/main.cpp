@@ -2,12 +2,16 @@
 
 int main() {
   InitWindow(screen::WIDTH, screen::HEIGHT, "Ping Pong");
+  InitAudioDevice();
   SetExitKey(KEY_NULL); // Disable ESC exiting
   SetTargetFPS(60);
 
   Image icon = LoadImage("resources/icon.png");
   SetWindowIcon(icon);
   UnloadImage(icon);
+
+  Sound BallPaddleCollision = LoadSound("resources/sounds/ball-paddle.ogg");
+  Sound BallTableCollision = LoadSound("resources/sounds/ball-table.ogg");
 
   Paddle player{};
   player.x = 10;
@@ -34,7 +38,7 @@ int main() {
 
     player.update();
     computer.update(ball.y);
-    ball.update();
+    ball.update(BallTableCollision);
     ball.checkWinner(player_score, computer_score);
 
     if (CheckCollisionCircleRec(
@@ -42,6 +46,7 @@ int main() {
       ball.radius,
       Rectangle{ player.x, player.y, (float) player.width, (float) player.height }
     )) {
+      PlaySound(BallPaddleCollision);
       ball.speed_x *= -1;
     }
 
@@ -50,6 +55,7 @@ int main() {
       ball.radius,
       Rectangle{ computer.x, computer.y, (float) computer.width, (float) computer.height }
     )) {
+      PlaySound(BallPaddleCollision);
       ball.speed_x *= -1;
     }
 
@@ -75,6 +81,10 @@ int main() {
     EndDrawing();
   }
 
+  UnloadSound(BallPaddleCollision);
+  UnloadSound(BallTableCollision);
+
+  CloseAudioDevice();
   CloseWindow();
 
   return 0;

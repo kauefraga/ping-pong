@@ -15,15 +15,17 @@ public:
     DrawCircle((int)x, (int)y, radius, RAYWHITE);
   }
 
-  void update() {
+  void update(Sound& collisionSound) {
     x += speed_x;
     y += speed_y;
 
     if (x + radius >= GetScreenWidth() || x - radius <= 0) {
+      PlaySound(collisionSound);
       speed_x *= -1;
     }
 
     if (y + radius >= GetScreenHeight() || y - radius <= 0) {
+      PlaySound(collisionSound);
       speed_y *= -1;
     }
   }
