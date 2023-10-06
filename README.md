@@ -31,11 +31,11 @@
 
 - A classic game with all the implementations you would expect.
 - Player versus Computer (simple AI algorithm).
-- Player versus Player (wasd and arrows).
+- Player versus Player (ws and arrows).
 - A ball that moves faster than your reflex.
 - A dead-simple score implementation.
 - It's written in C++, so it's blazingly fast!
-- Memory RAM? It is consuming around 25MB!!
+- It's very lightweight. It is consuming around 25MB!!
 
 ## ⬇️ Getting Started
 
