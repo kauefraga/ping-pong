@@ -27,10 +27,11 @@
   </p>
 </div>
 
-### Features (v2)
+### Features (v2.1.0)
 
 - A classic game with all the implementations you would expect.
 - Player versus Computer (simple AI algorithm).
+- Player versus Player (wasd and arrows).
 - A ball that moves faster than your reflex.
 - A dead-simple score implementation.
 - It's written in C++, so it's blazingly fast!
@@ -50,8 +51,16 @@ Feel free to open an [issue](https://github.com/kauefraga/ping-pong/issues). We'
 
 Currently it's pretty straightforward:
 
-- press <kbd>w</kbd> to go up
-- press <kbd>s</kbd> to go down
+- When you execute the game you will see the logo screen
+  - press any key
+- The second screen is the game mode selector
+  - press <kbd>w</kbd> or <kbd>arrow up</kbd> to select Player versus CPU
+  - press <kbd>s</kbd> or <kbd>arrow down</kbd> to select Player versus Player
+  - then hit enter
+- In the third screen (gameplay) you will see the ping pong court
+  - press <kbd>w</kbd> or <kbd>s</kbd> to move the player one (left)
+  - press <kbd>arrow up</kbd> or <kbd>arrow down</kbd> to move the player two (right)
+
 
 You learned how to play Ping Pong! Hope you like it 💙
 
@@ -59,6 +68,7 @@ You learned how to play Ping Pong! Hope you like it 💙
 
 - [C++](https://www.learncpp.com) - A general-purpose programming language.
 - [Raylib](https://www.raylib.com) - A powerful library that is easy to use and simple to enjoy videogames programming.
+  - [Raylib Examples](https://www.raylib.com/examples.html) - It has a lot of examples on how to do something.
 - [Raylib Template](https://github.com/kauefraga/raylib-template) - A Raylib template for c++ that comes with a few useful configuration.
 - [Aseprite](https://www.aseprite.org) - An animated sprite editor and pixel art tool.
 
