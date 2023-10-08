@@ -1,13 +1,12 @@
 #pragma once
 
 #include <raylib.h>
-#include "constants.h"
 
 class Ball {
 public:
   float x = GetScreenWidth() / 2.0f;
   float y = GetScreenHeight() / 2.0f;
-  int speed_x = 5;
+  int speed_x = 10;
   int speed_y = 5;
   float radius = 20;
 

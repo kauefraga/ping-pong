@@ -1,4 +1,5 @@
 #include "game.h"
+#include "constants.h"
 
 
 typedef enum GameScreen { LOGO = 0, SELECT_GAME_MODE, GAMEPLAY } GameScreen;
@@ -41,7 +42,7 @@ int main() {
   while (!WindowShouldClose()) {
     switch (currentScreen) {
       case LOGO: {
-        if (IsKeyDown(GetKeyPressed())) {
+        if (IsKeyDown(KEY_SPACE)) {
           currentScreen = SELECT_GAME_MODE;
         }
       } break;
@@ -153,8 +154,8 @@ int main() {
         );
 
         DrawText(
-          "Press any key to start",
-          (GetScreenWidth() / 2) - (MeasureText("Press any key to start", 60) / 2),
+          "Press SPACE to start",
+          (GetScreenWidth() / 2) - (MeasureText("Press SPACE to start", 60) / 2),
           (int) (GetScreenHeight() / 1.5f),
           60,
           RAYWHITE
@@ -209,8 +210,8 @@ int main() {
         }
 
         DrawText(
-          "Hit enter to start playing",
-          (GetScreenWidth() / 2) - (MeasureText("Hit enter to start playing", 40) / 2),
+          "Hit ENTER to start playing",
+          (GetScreenWidth() / 2) - (MeasureText("Hit ENTER to start playing", 40) / 2),
           (int) (GetScreenHeight() / 1.2f),
           40,
           GRAY
