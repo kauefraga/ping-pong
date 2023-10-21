@@ -19,12 +19,28 @@
     <None Include="LICENSE" />
     <None Include="README.md" />
     <None Include=".gitignore" />
+    <None Include="CREDITS.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\game.h">
+    <ClInclude Include="src\constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\constants.h">
+    <ClInclude Include="src\entities\entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\paddles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\entities\ball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\start.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\gamemode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\scenes\gameplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

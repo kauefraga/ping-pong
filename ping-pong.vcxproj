@@ -155,12 +155,18 @@
   <ItemGroup>
     <None Include=".editorconfig" />
     <None Include=".gitignore" />
+    <None Include="CREDITS.md" />
     <None Include="LICENSE" />
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\constants.h" />
-    <ClInclude Include="src\game.h" />
+    <ClInclude Include="src\entities\ball.h" />
+    <ClInclude Include="src\entities\entity.h" />
+    <ClInclude Include="src\entities\paddles.h" />
+    <ClInclude Include="src\scenes\gamemode.h" />
+    <ClInclude Include="src\scenes\gameplay.h" />
+    <ClInclude Include="src\scenes\start.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
