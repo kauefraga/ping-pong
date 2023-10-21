@@ -67,6 +67,18 @@ You learned how to play Ping Pong! Hope you like it 💙
 
 See who helped to make this project better, [CREDITS](CREDITS.md).
 
+## 📑 Roadmap
+
+A list to keep track of what's coming soon.
+
+- [ ] Release version 2.2.0.
+  - Add background sound track.
+  - Implement `winner` (after 25 points).
+  - Implement window resizing.
+  - Implement a settings menu (subscene of gameplay scene)
+- [ ] Refactor
+  - Solve scene management
+
 ## 📝 License
 
 This project is licensed under the GPL-3.0 License - See the [LICENSE](https://github.com/kauefraga/ping-pong/blob/main/LICENSE) for more information.
