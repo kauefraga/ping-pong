@@ -1,5 +1,6 @@
-#include "entities.h"
 #include "constants.h"
+#include "entities/paddles.h"
+#include "entities/ball.h"
 
 typedef enum GameScreen { LOGO = 0, SELECT_GAME_MODE, GAMEPLAY } GameScreen;
 typedef enum GameMode { PLAYER_VERSUS_CPU = 0, PLAYER_VERSUS_PLAYER } GameMode;

@@ -1,14 +1,19 @@
 #pragma once
 
 #include <raylib.h>
+#include "entity.h"
 
-class Ball {
+
+class Ball : public Entity {
 public:
-  float x = GetScreenWidth() / 2.0f;
-  float y = GetScreenHeight() / 2.0f;
   int speed_x = 10;
   int speed_y = 5;
   float radius = 20;
+
+  Ball() {
+    x = GetScreenWidth() / 2.0f;
+    y = GetScreenHeight() / 2.0f;
+  }
 
   void draw() {
     DrawCircle((int)x, (int)y, radius, RAYWHITE);
@@ -48,48 +53,5 @@ public:
     int speed_choices[2] = { -1, 1 };
     speed_x *= speed_choices[GetRandomValue(0, 1)];
     speed_y *= speed_choices[GetRandomValue(0, 1)];
-  }
-};
-
-class Paddle {
-protected:
-  void LimitMovement() {
-    if (y + height >= GetScreenHeight()) {
-      y = (float)GetScreenHeight() - height;
-    }
-
-    if (y <= 0) {
-      y = 0;
-    }
-  }
-
-public:
-  float x;
-  float y;
-  int speed = 10;
-  int width = 20;
-  int height = 100;
-
-  void draw() {
-    DrawRectangle((int)x, (int)y, width, height, RAYWHITE);
-  }
-
-  void update() {
-    LimitMovement();
-  }
-};
-
-class CpuPaddle : public Paddle {
-public:
-  void update(float ball_y) {
-    if (y + height / 2.0f > ball_y) {
-      y -= speed;
-    }
-
-    if (y + height / 2.0f <= ball_y) {
-      y += speed;
-    }
-
-    LimitMovement();
   }
 };
