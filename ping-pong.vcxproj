@@ -167,6 +167,7 @@
     <ClInclude Include="src\scenes\gamemode.h" />
     <ClInclude Include="src\scenes\gameplay.h" />
     <ClInclude Include="src\scenes\start.h" />
+    <ClInclude Include="src\sounds\music.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
