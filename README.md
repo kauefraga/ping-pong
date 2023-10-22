@@ -72,10 +72,11 @@ See who helped to make this project better, [CREDITS](CREDITS.md).
 A list to keep track of what's coming soon.
 
 - [ ] Release version 2.2.0.
-  - Add background sound track.
-  - Implement `winner` (after 25 points).
-  - Implement window resizing.
-  - Implement a settings menu (subscene of gameplay scene)
+  - [x] Add background sound track.
+  - [x] Fix ball table collision sound.
+  - [ ] Implement `winner` (after 25 points).
+  - [ ] Implement window resizing.
+  - [ ] Implement a settings menu (subscene of gameplay scene)
 - [ ] Refactor
   - Solve scene management
 
