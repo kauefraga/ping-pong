@@ -16,7 +16,7 @@ public:
   }
 
   void draw() {
-    DrawCircle((int)x, (int)y, radius, RAYWHITE);
+    DrawCircle((int)x, (int)y, radius, ORANGE);
   }
 
   void update(Sound& collisionSound) {
