@@ -2,6 +2,7 @@
 #include "scenes/start.h"
 #include "scenes/gamemode.h"
 #include "scenes/gameplay.h"
+#include "sounds/music.h"
 
 
 GameScene currentScene;
@@ -10,6 +11,10 @@ GameMode currentGameMode;
 StartScene startScene;
 GamemodeScene gamemodeScene;
 GameplayScene gameplayScene;
+
+Music soundTrack;
+float timePlayed = 0.0f;
+bool pauseMusic;
 
 void init() {
   InitWindow(screen::WIDTH, screen::HEIGHT, "Ping Pong");
@@ -31,12 +36,18 @@ void init() {
   startScene.load();
   gamemodeScene.load();
   gameplayScene.load();
+
+  soundTrack = LoadMusicStream("resources/sounds/jazz-sound-track.mp3");
+  SetMusicVolume(soundTrack, 0.1f);
+  PlayMusicStream(soundTrack);
 }
 
 void quit() {
   startScene.unload();
   gamemodeScene.unload();
   gameplayScene.unload();
+
+  UnloadMusicStream(soundTrack);
 
   CloseAudioDevice();
   CloseWindow();
@@ -46,6 +57,8 @@ int main() {
   init();
 
   while (!WindowShouldClose()) {
+    updateMusic(soundTrack, pauseMusic, timePlayed);
+
     switch (currentScene) {
     case LOGO: {
       startScene.update(currentScene);
