@@ -12,15 +12,13 @@ private:
 
   Paddle player;
   Paddle player2;
-  CpuPaddle computer;
   Ball ball;
 
-  int player_score;
-  int player2_score;
-  int computer_score;
+  int score1;
+  int score2;
 public:
   void Load();
   void Unload();
   void Update(int& currentScene, int& currentGameMode);
-  void Render(int& currentGameMode);
+  void Render();
 };

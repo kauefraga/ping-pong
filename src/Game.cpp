@@ -59,7 +59,7 @@ void Game::Render() {
 
   if (currentScene == 1) gamemodeScene.Render(currentGameMode);
 
-  if (currentScene == 2) gameplayScene.Render(currentGameMode);
+  if (currentScene == 2) gameplayScene.Render();
 
   EndDrawing();
 }
