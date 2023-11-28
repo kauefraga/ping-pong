@@ -10,7 +10,7 @@ public:
   int speed_y = 5;
   float radius = 20;
 
-  Ball();
+  void Load();
 
   void Update(Sound& collisionSound);
   void Draw();

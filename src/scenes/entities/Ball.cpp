@@ -1,7 +1,7 @@
 #include "Ball.h"
 
 
-Ball::Ball() {
+void Ball::Load() {
   x = GetScreenWidth() / 2.0f;
   y = GetScreenHeight() / 2.0f;
 }
