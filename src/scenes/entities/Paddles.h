@@ -12,11 +12,10 @@ public:
   int width = 20;
   int height = 100;
 
+  void Load(const float x, const float y);
   void Update();
+  void UpdateCpu(const float& ball_y);
   void Draw();
-};
 
-class CpuPaddle : public Paddle {
-public:
-  void Update(const float& ball_y);
+  Rectangle GetRect();
 };

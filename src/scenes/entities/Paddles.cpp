@@ -1,5 +1,11 @@
 #include "Paddles.h"
 
+
+void Paddle::Load(const float x, const float y) {
+  Entity::x = x;
+  Entity::y = y;
+}
+
 void Paddle::Update() {
   LimitMovement();
 }
@@ -18,7 +24,7 @@ void Paddle::LimitMovement() {
   }
 }
 
-void CpuPaddle::Update(const float& ball_y) {
+void Paddle::UpdateCpu(const float& ball_y) {
   if (y + height / 2.0f > ball_y) {
     y -= speed;
   }
@@ -28,4 +34,8 @@ void CpuPaddle::Update(const float& ball_y) {
   }
 
   LimitMovement();
+}
+
+Rectangle Paddle::GetRect() {
+  return Rectangle{ x, y, (float) width, (float) height };
 }
