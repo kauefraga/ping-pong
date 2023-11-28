@@ -22,33 +22,54 @@
     <None Include="CREDITS.md" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\constants.h">
+    <ClInclude Include="src\scenes\entities\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\entity.h">
+    <ClInclude Include="src\scenes\entities\Paddles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\paddles.h">
+    <ClInclude Include="src\scenes\entities\Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\entities\ball.h">
+    <ClInclude Include="src\scenes\Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\start.h">
+    <ClInclude Include="src\scenes\Gamemode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\gamemode.h">
+    <ClInclude Include="src\scenes\Gameplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\gameplay.h">
+    <ClInclude Include="src\scenes\sounds\Music.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sounds\music.h">
+    <ClInclude Include="src\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\sounds\Music.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\Start.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\Gamemode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\Gameplay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\entities\Ball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenes\entities\Paddles.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
