@@ -72,13 +72,15 @@ See who helped to make this project better, [CREDITS](CREDITS.md).
 A list to keep track of what's coming soon.
 
 - [ ] Release version 2.2.0.
-  - [x] Add background sound track.
-  - [x] Fix ball table collision sound.
-  - [ ] Implement `winner` (after 25 points).
-  - [ ] Implement window resizing.
-  - [ ] Implement a settings menu (subscene of gameplay scene)
-- [ ] Refactor
-  - Solve scene management
+  - Add background sound track.
+  - Fix ball table collision sound.
+  - Change ball color to contrast. 
+  - Implement `winner` (after 25 points).
+- [x] Refactor #1
+  - Encapsulate global states
+  - Use header and implementation files (.cpp and .h)
+  - Folder structure scene-based
+  - Enforces OOP
 
 ## 📝 License
 
