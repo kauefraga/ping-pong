@@ -32,6 +32,22 @@ void GamemodeScene::Render(int& currentGameMode) {
     RAYWHITE
   );
 
+  DrawText(
+    "Player Vs. CPU",
+    (GetScreenWidth() / 2) - (MeasureText("Player Vs. CPU", 50) / 2),
+    (int)(GetScreenHeight() / 2.5f),
+    50,
+    RAYWHITE
+  );
+
+  DrawText(
+    "Player Vs. Player",
+    (GetScreenWidth() / 2) - (MeasureText("Player Vs. Player", 50) / 2),
+    GetScreenHeight() / 2,
+    50,
+    RAYWHITE
+  );
+
   // Hovering effect
   if (currentGameMode == 0) {
     DrawText(
@@ -42,15 +58,6 @@ void GamemodeScene::Render(int& currentGameMode) {
       SKYBLUE
     );
   }
-  else {
-    DrawText(
-      "Player Vs. CPU",
-      (GetScreenWidth() / 2) - (MeasureText("Player Vs. CPU", 50) / 2),
-      (int)(GetScreenHeight() / 2.5f),
-      50,
-      RAYWHITE
-    );
-  }
 
   if (currentGameMode == 1) {
     DrawText(
@@ -59,15 +66,6 @@ void GamemodeScene::Render(int& currentGameMode) {
       GetScreenHeight() / 2,
       50,
       SKYBLUE
-    );
-  }
-  else {
-    DrawText(
-      "Player Vs. Player",
-      (GetScreenWidth() / 2) - (MeasureText("Player Vs. Player", 50) / 2),
-      GetScreenHeight() / 2,
-      50,
-      RAYWHITE
     );
   }
 
