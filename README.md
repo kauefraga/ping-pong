@@ -76,11 +76,14 @@ A list to keep track of what's coming soon.
   - Fix ball table collision sound.
   - Change ball color to contrast. 
   - Implement `winner` (after 25 points).
-- [x] Refactor #1
-  - Encapsulate global states
-  - Use header and implementation files (.cpp and .h)
-  - Folder structure scene-based
-  - Enforces OOP
+- [x] Refactor #1.
+  - Encapsulate global states.
+  - Use header and implementation files (.cpp and .h).
+  - Folder structure scene-based.
+  - Enforces OOP.
+- [ ] Refactor #2.
+  - Simplify scores and classes.
+  - Use "state" design pattern to solve scene transition.
 
 ## 📝 License
 
