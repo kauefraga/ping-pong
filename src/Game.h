@@ -2,9 +2,9 @@
 
 #include <raylib.h>
 #include "scenes/sounds/Music.h"
-#include "scenes/Start.h"
-#include "scenes/Gamemode.h"
-#include "scenes/Gameplay.h"
+#include "scenes/Start/Start.h"
+#include "scenes/Gamemode/Gamemode.h"
+#include "scenes/Gameplay/Gameplay.h"
 
 
 class Game {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <raylib.h>
-#include "entities/Paddles.h"
-#include "entities/Ball.h"
+#include "../entities/Paddles.h"
+#include "../entities/Ball.h"
 
 
 class GameplayScene {
