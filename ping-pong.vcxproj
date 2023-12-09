@@ -164,9 +164,9 @@
     <ClInclude Include="src\scenes\entities\Entity.h" />
     <ClInclude Include="src\scenes\entities\Paddles.h" />
     <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\scenes\Gamemode.h" />
-    <ClInclude Include="src\scenes\Gameplay.h" />
-    <ClInclude Include="src\scenes\Start.h" />
+    <ClInclude Include="src\scenes\Gamemode\Gamemode.h" />
+    <ClInclude Include="src\scenes\Gameplay\Gameplay.h" />
+    <ClInclude Include="src\scenes\Start\Start.h" />
     <ClInclude Include="src\scenes\sounds\Music.h" />
   </ItemGroup>
   <ItemGroup>
@@ -174,10 +174,10 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\scenes\entities\Ball.cpp" />
     <ClCompile Include="src\scenes\entities\Paddles.cpp" />
-    <ClCompile Include="src\scenes\Gamemode.cpp" />
-    <ClCompile Include="src\scenes\Gameplay.cpp" />
+    <ClCompile Include="src\scenes\Gamemode\Gamemode.cpp" />
+    <ClCompile Include="src\scenes\Gameplay\Gameplay.cpp" />
     <ClCompile Include="src\scenes\sounds\Music.cpp" />
-    <ClCompile Include="src\scenes\Start.cpp" />
+    <ClCompile Include="src\scenes\Start\Start.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="bin\x64\Release\ping-pong\resources\background-pixel.png" />

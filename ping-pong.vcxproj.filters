@@ -31,13 +31,13 @@
     <ClInclude Include="src\scenes\entities\Ball.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\Start.h">
+    <ClInclude Include="src\scenes\Start\Start.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\Gamemode.h">
+    <ClInclude Include="src\scenes\Gamemode\Gamemode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\scenes\Gameplay.h">
+    <ClInclude Include="src\scenes\Gameplay\Gameplay.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\scenes\sounds\Music.h">
@@ -57,13 +57,13 @@
     <ClCompile Include="src\scenes\sounds\Music.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\Start.cpp">
+    <ClCompile Include="src\scenes\Start\Start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\Gamemode.cpp">
+    <ClCompile Include="src\scenes\Gamemode\Gamemode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\scenes\Gameplay.cpp">
+    <ClCompile Include="src\scenes\Gameplay\Gameplay.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\scenes\entities\Ball.cpp">
